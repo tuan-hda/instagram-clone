@@ -13,7 +13,7 @@ interface Props {
 
 export default function Avatar({
   url,
-  width = "w-[76]",
+  width = "w-[74]",
   storyPadding = "p-[2.5]",
   imageBorderWidth = "border-[3px]",
   hasStory = false,

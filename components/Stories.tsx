@@ -3,6 +3,7 @@ import React from "react"
 import { USERS } from "data/users"
 import { LinearGradient } from "expo-linear-gradient"
 import Avatar from "./Avatar"
+import CustomText from "./CustomText"
 
 export default function Stories() {
   return (
@@ -11,9 +12,9 @@ export default function Stories() {
         {USERS.map((user, index) => (
           <View className='w-[76] ml-3' key={index}>
             <Avatar url={user.image} hasStory />
-            <Text className='text-white text-xs mt-1' numberOfLines={1} ellipsizeMode='tail'>
+            <CustomText className='text-white text-[13px] mt-1' numberOfLines={1} ellipsizeMode='tail'>
               {user.user.toLowerCase()}
-            </Text>
+            </CustomText>
           </View>
         ))}
       </ScrollView>
