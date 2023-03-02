@@ -3,6 +3,7 @@ import Post from "components/Post"
 import Stories from "components/Stories"
 import { POSTS } from "data/posts"
 import { SafeAreaView, ScrollView } from "react-native"
+import { Divider } from "react-native-elements"
 
 export default function HomeScreen() {
   return (
@@ -10,6 +11,7 @@ export default function HomeScreen() {
       <Header />
       <ScrollView>
         <Stories />
+        <Divider width={1} orientation='vertical' className='border-[#222]' />
         {POSTS.map((post, index) => (
           <Post post={post} key={index} />
         ))}

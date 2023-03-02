@@ -8,8 +8,8 @@ export default function Stories() {
   return (
     <View className='mb-[10]'>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {USERS.map((user) => (
-          <View className='w-[76] ml-3'>
+        {USERS.map((user, index) => (
+          <View className='w-[76] ml-3' key={index}>
             <Avatar url={user.image} hasStory />
             <Text className='text-white text-xs mt-1' numberOfLines={1} ellipsizeMode='tail'>
               {user.user.toLowerCase()}

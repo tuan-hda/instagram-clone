@@ -19,7 +19,7 @@ export const POSTS = [
     ],
   },
   {
-    imageUrl: "https://i.ibb.co/182bP1y/4k.png",
+    imageUrl: "https://wallpaperaccess.com/full/1214313.jpg",
     user: USERS[0].user,
     likes: 7870,
     caption: "Train Ride to Hogwarts.",
