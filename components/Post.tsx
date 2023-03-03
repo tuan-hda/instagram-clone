@@ -66,24 +66,8 @@ const PostFooter = ({ post }: PostProps) => {
       )}
 
       <CommentSection post={post} />
-
+      <Comments post={post} />
       <CustomText className='text-p-gray mt-[6] text-[13px]'>30 minutes ago</CustomText>
-    </View>
-  )
-}
-
-const CommentSection = ({ post }: PostProps) => {
-  return (
-    <View className='flex-row justify-between'>
-      <View className='flex-row space-x-2 mt-2 items-center'>
-        <Image source={{ uri: post.profile_picture }} className='w-6 h-6 rounded-full' />
-        <CustomText className='text-p-gray'>Add a comment...</CustomText>
-      </View>
-      <View className='flex-row space-x-3 mt-2 items-center'>
-        <LoveIcon />
-        <HandsIcon />
-        <PlusIcon />
-      </View>
     </View>
   )
 }
@@ -107,5 +91,35 @@ const FooterButtons = ({ post }: PostProps) => {
         <BookmarkIcon width={24} height={24} />
       </TouchableOpacity>
     </View>
+  )
+}
+
+const CommentSection = ({ post }: PostProps) => {
+  return (
+    <View className='flex-row justify-between mt-2'>
+      <View className='flex-row space-x-2 items-center'>
+        <Image source={{ uri: post.profile_picture }} className='w-6 h-6 rounded-full' />
+        <CustomText className='text-p-gray'>Add a comment...</CustomText>
+      </View>
+      <View className='flex-row space-x-3 mt-2 items-center'>
+        <LoveIcon />
+        <HandsIcon />
+        <PlusIcon />
+      </View>
+    </View>
+  )
+}
+
+function Comments({ post }: PostProps) {
+  return (
+    <>
+      {post.comments.map((comment, index) => (
+        <View key={index} className='mt-[6]'>
+          <CustomText className='text-white'>
+            <CustomText className='font-bold'>{comment.user}</CustomText> {comment.comment}
+          </CustomText>
+        </View>
+      ))}
+    </>
   )
 }

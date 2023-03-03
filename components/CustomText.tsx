@@ -17,6 +17,7 @@ const Fonts = {
 
 const disableStyles: StyleProp<TextStyle> = {
   fontWeight: "normal",
+  includeFontPadding: false,
 }
 
 type TextProps = Text["props"]
